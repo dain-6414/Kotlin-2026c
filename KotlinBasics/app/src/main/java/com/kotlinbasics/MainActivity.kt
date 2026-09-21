@@ -10,6 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.key.Key.Companion.I
 //import androidx.compose.ui.tooling.data.EmptyGroup.data
 import androidx.compose.ui.tooling.preview.Preview
 import com.kotlinbasics.ui.theme.KotlinBasicsTheme
@@ -31,7 +32,28 @@ class MainActivity : ComponentActivity() {
         week03Variables()
         week03Functions()
         week04Classes()
+        week04Collections()
     }
+}
+private fun week04Collections() {
+    println("======== Kotlin Classes ========")
+
+    val fruits = listOf("apple", "banana", "orange")
+    val mutableFruits = mutableListOf("kiwi", "waterMelon")
+
+    mutableFruits.add("peach")
+    println("Fruits : $fruits")
+    println("Mutable Fruits : $mutableFruits")
+
+    val scorse = mapOf("Kim" to 100, "Park" to 96, "Lee" to 97)
+    println("scorse : $scorse")
+
+    for (fruit in mutableFruits) {
+        println("I like $fruit")
+    }
+
+    scorse.forEach{(name, score) -> println("$name scorse $score")}
+    fruits.forEach { fruit -> println("$fruit") }
 }
 
 private fun week04Classes() {
