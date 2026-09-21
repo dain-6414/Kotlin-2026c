@@ -87,6 +87,21 @@ private fun week03Functions(){
     println("Sum: ${add(5, -71)}")
     introduce("Kim", 7)
     introduce("Park")
+    println("========= Kotlin Functions =========")
+
+    fun printAll( vip: Boolean, name: String){
+        println("$vip, $name")
+    }
+
+    fun printMany(vararg msg: String){
+        for (m in msg) println(m)
+    }
+
+    printAll( vip: true, name: "dy")
+    printAll(name = "mirea", vip = true)
+
+    printMany(...msg:"A", "B", "C", "D")
+
 }
 
 
