@@ -10,6 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+//import androidx.compose.ui.tooling.data.EmptyGroup.data
 import androidx.compose.ui.tooling.preview.Preview
 import com.kotlinbasics.ui.theme.KotlinBasicsTheme
 
@@ -29,7 +30,35 @@ class MainActivity : ComponentActivity() {
         }
         week03Variables()
         week03Functions()
+        week04Classes()
     }
+}
+
+private fun week04Classes() {
+    println("======== Kotlin Classes ========")
+
+    class Student {
+        var name: String = ""
+        var age: Int = 0
+
+        fun introduce() {
+            println("Hi, I'm $name and I'm $age years old")
+        }
+    }
+    val student1 = Student()
+    student1.name = "Mirea"
+    student1.age = 21
+    student1.introduce()
+
+    data class Person(val name: String, val age: Int)
+
+    val person1 = Person("kim", 23)
+    val person2 = Person("Park", 21)
+
+    println("Person1 : $person1") // Java toString()
+    println("Person1 : ${person1.name}")
+    println("Person1 : ${person1.age}")
+    println("Person2 : $person2")
 }
 
 private fun week03Variables() {
@@ -89,7 +118,7 @@ private fun week03Functions(){
     introduce("Park")
     println("========= Kotlin Functions =========")
 
-    fun printAll( vip: Boolean, name: String){
+    fun printAll(vip: Boolean, name: String){
         println("$vip, $name")
     }
 
@@ -97,10 +126,10 @@ private fun week03Functions(){
         for (m in msg) println(m)
     }
 
-    printAll( vip: true, name: "dy")
+    printAll(true,"dy")
     printAll(name = "mirea", vip = true)
 
-    printMany(...msg:"A", "B", "C", "D")
+    printMany("A", "B", "C", "D")
 
 }
 
