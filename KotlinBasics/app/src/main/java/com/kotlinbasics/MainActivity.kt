@@ -1,6 +1,7 @@
 package com.kotlinbasics
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -11,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.key.Key.Companion.I
+import androidx.compose.ui.text.font.FontWeight
 //import androidx.compose.ui.tooling.data.EmptyGroup.data
 import androidx.compose.ui.tooling.preview.Preview
 import com.kotlinbasics.ui.theme.KotlinBasicsTheme
@@ -29,10 +31,10 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        week03Variables()
-        week03Functions()
+        //week03Variables()
+        //week03Functions()
         week04Classes()
-        week04Collections()
+        //week04Collections()
     }
 }
 private fun week04Collections() {
@@ -73,6 +75,21 @@ private fun week04Classes() {
     student1.introduce()
 
     data class Person(val name: String, val age: Int)
+
+
+
+    class Animal(var specise: String){
+        var weight : Double = 0.0
+        constructor(specise: String, weight: Double) : this(specise) {
+            this.weight = weight
+            //Log.d("KotlinWeek04", "$specise의 무게 : $weight ㅏㅎ")
+        }
+        fun makeSound(){
+            Log.d("KotlinWeek04", "$specise 가 소리를 냅니다.")
+        }
+    }
+    val puppy = Animal("웰시코기", 10.5)
+    puppy.makeSound()
 
     val person1 = Person("kim", 23)
     val person2 = Person("Park", 21)
