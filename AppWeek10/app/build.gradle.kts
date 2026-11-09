@@ -33,6 +33,13 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    // ViewBinding Activate
+    // pros : 1) 타입 안정성, 2) Null 안정성, 3) findViewByID 반복 제거, 4) 성능
+    // cons : 1) 빌드 시간 증가, 2) 바인딩 객체 생성 필요, 3) 학습 곡선
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
