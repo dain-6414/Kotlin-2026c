@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.appweek11"
-        minSdk = 26
+        minSdk = 27
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -35,6 +35,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
     buildFeatures{
         viewBinding = true
     }
@@ -54,7 +55,7 @@ dependencies {
     kapt("androidx.room:room-compiler:$roomVersion")
 
     // Coroutine
-    implementation("org.jetbrains.kotlin:kotlinx-coroutines-android:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     implementation(libs.material)
     implementation(libs.androidx.activity)
